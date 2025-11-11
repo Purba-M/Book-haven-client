@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 
-const AddBooks=()=>{
+const AddBooks = () => {
   const [formData, setFormData] = useState({
-    title:"",
-    author:"",
-    genre:"",
-    image:"",
-    description:"",
+    title: "",
+    author: "",
+    genre: "",
+    rating: "",
+    summary: "",
+    coverImage: "",
+    userEmail: "",
   });
 
   const handleChange = (e) => {
@@ -29,8 +31,10 @@ const AddBooks=()=>{
           title: "",
           author: "",
           genre: "",
-          image: "",
-          description: "",
+          rating: "",
+          summary: "",
+          coverImage: "",
+          userEmail: "",
         });
       } else {
         alert("❌ Failed to add book.");
@@ -43,7 +47,9 @@ const AddBooks=()=>{
 
   return (
     <div className="max-w-md mx-auto p-6 bg-white rounded-xl shadow-md mt-10">
-      <h2 className="text-2xl font-semibold mb-4 text-center">Add a New Book</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-center">
+        Add a New Book
+      </h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
@@ -74,24 +80,43 @@ const AddBooks=()=>{
           onChange={handleChange}
           className="w-full p-2 border rounded"
         />
+        <input
+          type="number"
+          name="rating"
+          placeholder="rating"
+          value={formData.rating}
+          onChange={handleChange}
+          className="w-full p-2 border rounded"
+        />
+         <textarea
+          type="text"
+          name="summary"
+          placeholder="summary"
+          value={formData.summary}
+          onChange={handleChange}
+          className="w-full p-2 border rounded"
+          rows='3'
+        />
 
         <input
           type="text"
-          name="image"
-          placeholder="Image URL"
-          value={formData.image}
+          name="coverImage"
+          placeholder="coverImage"
+          value={formData.coverImage}
           onChange={handleChange}
           className="w-full p-2 border rounded"
         />
 
-        <textarea
-          name="description"
-          placeholder="Short Description"
-          value={formData.description}
+
+        <input
+          type="text"
+          name="email"
+          placeholder="email"
+          value={formData.email}
           onChange={handleChange}
           className="w-full p-2 border rounded"
-          rows="3"
-        ></textarea>
+        />
+        
 
         <button
           type="submit"

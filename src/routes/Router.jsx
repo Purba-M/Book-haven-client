@@ -7,11 +7,14 @@ import Mybooks from "../pages/books/Mybooks";
 import Login from "../pages/auth/Login";
 import Registration from "../pages/auth/Regstration";
 import Authlayout from "../layouts/AuthLayout";
+import ErrorLayout from "../layouts/ErrorLayout";
+import Bookdetails from "../pages/books/Bookdetails";
 
 const router=createBrowserRouter([
     {
         path:'/',
         element:<MainLayout></MainLayout>,
+        errorElement:<ErrorLayout></ErrorLayout>,
         children:[
             {
                 path:'/',
@@ -28,6 +31,10 @@ const router=createBrowserRouter([
             {
                 path:'/my-books',
                 element:<Mybooks></Mybooks>
+            },
+            {
+                path:'/book-details/:id',
+                element:<Bookdetails></Bookdetails>
             }
         ]
 
