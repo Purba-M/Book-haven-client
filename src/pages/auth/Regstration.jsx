@@ -90,7 +90,7 @@ const Registration = () => {
     <div className="flex justify-center min-h-screen items-center bg-gradient-to-br from-pink-200 via-yellow-100 to-lime-100">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5">
         <h2 className="font-semibold text-center text-[20px]">
-          🎠 Create Your ToyStore Account
+          Create Your ToyStore Account
         </h2>
         <form onSubmit={handleregister} className="card-body bg-white">
           <fieldset className="fieldset">

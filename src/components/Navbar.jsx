@@ -57,7 +57,7 @@ const Navbar = () => {
       {/* Right */}
       <div className="navbar-end space-x-3">
         {!user ? (
-          // ✅ If not logged in → show Login & Register
+          
           <>
             <NavLink to="/auth/login" className="btn btn-outline btn-sm">
               Login
@@ -67,7 +67,7 @@ const Navbar = () => {
             </NavLink>
           </>
         ) : (
-          // ✅ If logged in → show photo + logout
+          
           <div className="flex items-center gap-3">
             {user.photoURL ? (
               <div className="tooltip tooltip-bottom" data-tip={user.displayName || "User"}>
