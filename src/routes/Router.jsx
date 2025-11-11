@@ -4,6 +4,9 @@ import Home from "../pages/home/Home"
 import Allbooks from "../pages/books/Allbooks";
 import AddBooks from "../pages/books/AddBooks";
 import Mybooks from "../pages/books/Mybooks";
+import Login from "../pages/auth/Login";
+import Registration from "../pages/auth/Regstration";
+import Authlayout from "../layouts/AuthLayout";
 
 const router=createBrowserRouter([
     {
@@ -27,7 +30,22 @@ const router=createBrowserRouter([
                 element:<Mybooks></Mybooks>
             }
         ]
-    }
+
+    },
+    {
+    path: "/auth",
+    element: <Authlayout />,
+    children: [
+      {
+        path: "login",
+        element: <Login/>,
+      },
+      {
+        path: "register",
+        element: <Registration/>,
+      },
+    ],
+  },
 ])
 
 export default router;

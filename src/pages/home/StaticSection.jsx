@@ -2,10 +2,10 @@ import React from "react";
 import image from "../../assests/image.png";
 import name from "../../assests/your_name.jpg";
 import maze from "../../assests/maze-ruuner.jpg";
-import finn from '../../assests/finn.jpg';
-import murder from '../../assests/featured.jpg';
-import peace from '../../assests/peace.jpg';
-import alchemist from '../../assests/alchemist.jpg';
+import finn from "../../assests/finn.jpg";
+import murder from "../../assests/featured.jpg";
+import peace from "../../assests/peace.jpg";
+import alchemist from "../../assests/alchemist.jpg";
 
 const StaticSection = () => {
   return (
@@ -19,12 +19,19 @@ const StaticSection = () => {
           { img: maze, genre: "Action" },
           { img: finn, genre: "Adventure" },
         ].map((item, index) => (
-          <div key={index} className="card bg-base-100 w-full max-w-xs shadow-sm hover:shadow-md transition-shadow">
+          <div
+            key={index}
+            className="card bg-base-100 w-full max-w-xs shadow-sm hover:shadow-md transition-shadow"
+          >
             <figure>
-              <img src={item.img} className="w-full h-60 object-cover rounded-t-xl" alt={item.genre} />
+              <img
+                src={item.img}
+                className="w-full h-64 object-cover rounded-t-xl"
+                alt={item.genre}
+              />
             </figure>
-            <div className="card-body">
-              <h2 className="card-title text-lg text-center">Genre: {item.genre}</h2>
+            <div className="card-body text-center">
+              <h2 className="card-title text-lg">Genre: {item.genre}</h2>
             </div>
           </div>
         ))}
@@ -36,27 +43,36 @@ const StaticSection = () => {
           Book Recommended by our Readers this Week
         </h2>
 
-        <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center">
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center">
           {[
             {
               img: murder,
-              desc: "The Murder in the Bookshop is a classic mystery where a rare book theft leads to a chilling murder. Detective Fleming Stone must uncover the truth hidden among dusty shelves and dark secrets."
+              desc: "The Murder in the Bookshop is a classic mystery where a rare book theft leads to a chilling murder. Detective Fleming Stone must uncover the truth hidden among dusty shelves and dark secrets.",
             },
             {
               img: peace,
-              desc: "War and Peace by Leo Tolstoy is an epic novel exploring Russian lives during the Napoleonic Wars, weaving themes of love, fate, and meaning amid chaos."
+              desc: "War and Peace by Leo Tolstoy is an epic novel exploring the lives of Russian families during the Napoleonic Wars, weaving themes of love, fate, and meaning amid chaos.",
             },
             {
               img: alchemist,
-              desc: "The Alchemist by Paulo Coelho tells the story of Santiago, a shepherd who follows his dream in search of treasure, discovering destiny and self-discovery along the way."
+              desc: "The Alchemist by Paulo Coelho tells the story of Santiago, a shepherd who follows his dream in search of treasure, discovering destiny and self-discovery along the way.",
             },
           ].map((book, index) => (
-            <div key={index} className="card bg-base-100 w-full max-w-xs shadow-sm hover:shadow-md transition-shadow">
+            <div
+              key={index}
+              className="card bg-base-100 w-full max-w-xs shadow-sm hover:shadow-md transition-shadow h-[460px] flex flex-col"
+            >
               <figure>
-                <img src={book.img} className="w-full h-72 object-cover rounded-t-xl" alt="book" />
+                <img
+                  src={book.img}
+                  className="w-full h-72 object-cover rounded-t-xl"
+                  alt="book"
+                />
               </figure>
-              <div className="card-body">
-                <p className="text-sm text-gray-600 leading-relaxed">{book.desc}</p>
+              <div className="card-body flex-1">
+                <p className="text-sm text-gray-600 leading-relaxed line-clamp-4">
+                  {book.desc}
+                </p>
               </div>
             </div>
           ))}
