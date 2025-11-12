@@ -1,19 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import Spinner from '../../components/Spinner';
+import axios from 'axios';
 
 const LatestBooks = () => {
   const [books, setBooks] = useState([]);
-  const [loading,seLoading]=useState([])
+  const [loading,setLoading]=useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/latest-books')
-      .then(res => res.json())
-      .then(data => setBooks(data));
-      seLoading(false)
-  }, []);
-    if (loading) {
-    return <Spinner/>; // show spinner while fetching
-  }
+  axios('http://localhost:5000/latest-books')
+    .then(res => {
+      setTimeout(() => {
+        setBooks(res.data);
+        setLoading(false);
+      }, 1000); // optional small delay
+    })
+    .catch(err => {
+      console.error("Error fetching books:", err);
+      setLoading(false);
+    });
+}, []); // dependency array closes here
+
+if (loading) {
+  return <Spinner />; // show spinner while fetching
+}
+
 
   return (
     <section className="max-w-7xl mx-auto my-10">

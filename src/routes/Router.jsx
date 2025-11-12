@@ -9,6 +9,7 @@ import Registration from "../pages/auth/Regstration";
 import Authlayout from "../layouts/AuthLayout";
 import ErrorLayout from "../layouts/ErrorLayout";
 import Bookdetails from "../pages/books/Bookdetails";
+import Private from "../components/Private";
 
 const router=createBrowserRouter([
     {
@@ -22,11 +23,13 @@ const router=createBrowserRouter([
             },
             {
                 path:'/allbooks',
-                element:<Allbooks></Allbooks>
+                element:
+                  <Allbooks></Allbooks>
+              
             },
             {
                 path:'/add-book',
-                element:<AddBooks></AddBooks>
+                element:<Private><AddBooks></AddBooks></Private>
             },
             {
                 path:'/my-books',
@@ -34,7 +37,7 @@ const router=createBrowserRouter([
             },
             {
                 path:'/book-details/:id',
-                element:<Bookdetails></Bookdetails>
+                element:<Private><Bookdetails></Bookdetails></Private>
             }
         ]
 
