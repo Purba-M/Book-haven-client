@@ -12,35 +12,29 @@ const LatestBooks = () => {
       setTimeout(() => {
         setBooks(res.data);
         setLoading(false);
-      }, 1000); // optional small delay
+      },1000);
     })
-    .catch(err => {
-      console.error("Error fetching books:", err);
-      setLoading(false);
-    });
-}, []); // dependency array closes here
+}, []);
 
 if (loading) {
-  return <Spinner />; // show spinner while fetching
+  return <Spinner />;
 }
-
-
-  return (
-    <section className="max-w-7xl mx-auto my-10">
+return (
+    <section className="max-w-7xl mx-auto my-10 bg-[#a3978f] rounded-xl">
       <h2 className="text-3xl font-bold text-center text-[#6B4226] mb-6">
-    Our Latest Arrivals
+       Our Latest Arrivals
       </h2>
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
-        {books.map((book) => (
-          <div key={book._id} className="bg-[#FFF9F4] rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-5">
+      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 p-6  ">
+        {books.map((book) =>(
+          <div key={book._id} className="rounded-lg shadow-md hover:shadow-lg transition-all duration-300 bg-slate-50/70 backdrop-blur-lg hover:shadow-black/50 hover:scale-103 ">
             <img
-              src={book.coverImage} 
-              alt={book.title}
-              className="w-full h-80 object-cover rounded-lg mb-4"
+              src={book.coverImage} className="w-full h-90 object-cover rounded-lg mb-4"
             />
-            <h3 className="text-xl font-semibold text-[#4B2E05]">{book.title}</h3>
+            <div className='px-5 mb-3'>
+            <h3 className="text-xl font-bold text-black">{book.title}</h3>
             <p className="text-gray-600">By {book.author}</p>
-            <p className="text-sm text-[#A67C52] mt-2">{book.genre}</p>
+            <p className="text-sm text-[#ad8a67] mt-2">{book.genre}</p>
+            </div>
           </div>
         ))}
       </div>

@@ -44,8 +44,8 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl font-bold text-red-600">
-          Book<span className="text-black">Haven</span>
+        <a className=" text-xl font-bold text-red-600 hover:text-blue-700 cursor-pointer transform hover:-translate-x-1">
+          Book <span className="text-black">Haven</span>
         </a>
       </div>
 
