@@ -46,7 +46,7 @@ const Login = () => {
           Welcome Back!
         </h2>
         <p className="text-center font-semibold text-lime-500">
-          Log in to your Toy World
+          Log in to your imagination
         </p>
 
         <form className="card-body" onSubmit={handlelogin}>
@@ -87,7 +87,7 @@ const Login = () => {
 
             <button
               type="submit"
-              className="btn text-white mt-4 w-full rounded-[20px] bg-red-600"
+              className="btn text-white mt-4 w-full rounded-[20px] bg-red-600 hover:bg-orange-600"
             >
               Let's Go! 🚀
             </button>

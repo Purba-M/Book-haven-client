@@ -12,7 +12,7 @@ const Mybooks = () => {
 
 useEffect(() => {
   if (!user?.email) return;
-   axios.get(`http://localhost:5000/my-books?email=${user.email}`)
+   axios.get(`https://book-haven-server-new.vercel.app/my-books?email=${user.email}`)
     .then((res) => {
       setBooks(res.data);
       setLoading(false);
@@ -31,10 +31,9 @@ useEffect(() => {
     );
 
    const handleDelete = (id) => {
-    // Regular confirm() for confirmation
     if (confirm("Are you sure you want to delete this book?")) {
       axios
-        .delete(`http://localhost:5000/delete-book/${id}`)
+        .delete(`https://book-haven-server-new.vercel.app/delete-book/${id}`)
         .then(() => {
           setBooks(books.filter((book) => book._id !== id));
           toast.success("Book deleted successfully!");

@@ -7,7 +7,7 @@ const LatestBooks = () => {
   const [loading,setLoading]=useState([])
 
   useEffect(() => {
-  axios('http://localhost:5000/latest-books')
+  axios.get('https://book-haven-server-new.vercel.app/latest-books')
     .then(res => {
       setTimeout(() => {
         setBooks(res.data);

@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -17,37 +18,37 @@ const AddBooks = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const response = await fetch("http://localhost:5000/add-book", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+  try {
+    const response = await axios.post(
+      "https://book-haven-server-new.vercel.app/add-book",
+      formData,
+      { headers: { "Content-Type": "application/json" } }
+    );
+
+    if (response.status === 200 || response.status === 201) {
+      toast.success("Book added successfully!");
+      setFormData({
+        title: "",
+        author: "",
+        genre: "",
+        rating: "",
+        summary: "",
+        coverImage: "",
+        userEmail: "",
       });
-
-      if (response.ok) {
-        toast("Book added successfully!");
-        setFormData({
-          title: "",
-          author: "",
-          genre: "",
-          rating: "",
-          summary: "",
-          coverImage: "",
-          userEmail: "",
-        });
-      } else {
-        alert("Failed to add book.");
-      }
-    } catch (error) {
-      console.error("Error adding book:", error);
-      alert("Server error. Check your console or backend logs.");
+    } else {
+      toast.error("Failed to add book.");
     }
-  };
+  } catch (error) {
+    console.error("Error adding book:", error.response?.data || error.message);
+    toast.error("Server error. Check your backend logs.");
+  }
+};
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-xl shadow-md mt-10">
+    <div className="max-w-md mx-auto p-6 bg-gradient-to-br from-amber-100 via-rose-50 to-emerald-100  rounded-xl shadow-md mt-10">
       <h2 className="text-2xl font-semibold mb-4 text-center">
         Add a New Book
       </h2>
@@ -119,7 +120,7 @@ const AddBooks = () => {
         />
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+          className="w-full bg-cyan-700 text-white py-2 rounded hover:bg-blue-700 cursor-pointer">
           Add Book
         </button>
       </form>

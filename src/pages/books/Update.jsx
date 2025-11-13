@@ -11,8 +11,8 @@ const Update = () => {
 
   
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/book-details/${id}`)
+    axios.get(`https://book-haven-server-new.vercel.app/book-details/${id}`)
+
       .then((res) => {
         setBook(res.data);
         setLoading(false);
@@ -26,7 +26,7 @@ const Update = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:5000/update-book/${id}`, book)
+      .put(`https://book-haven-server-new.vercel.app/update-book/${id}`, book)
       .then(() => {
         toast.success("Book updated successfully!");
         navigate("/my-books");

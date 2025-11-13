@@ -10,7 +10,7 @@ const Allbooks = () => {
 
   //fecthing
   useEffect(() => {
-    axios.get("http://localhost:5000/all-books")
+    axios.get("https://book-haven-server-new.vercel.app/all-books")
       .then((res) => {
         setTimeout(() => {
           setBooks(res.data);
