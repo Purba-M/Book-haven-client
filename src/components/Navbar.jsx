@@ -14,15 +14,15 @@ const Navbar = () => {
 
   const links = (
     <>
-      <li><NavLink to="/">Home</NavLink></li>
-      <li><NavLink to="/allbooks">All Books</NavLink></li>
-      <li><NavLink to="/add-book">Add Book</NavLink></li>
-      <li><NavLink to="/my-books">My Books</NavLink></li>
+      <li><NavLink to="/" className='font-semibold'>🏠 Home</NavLink></li>
+      <li><NavLink to="/allbooks" className='font-semibold'>📚 All Books</NavLink></li>
+      <li><NavLink to="/add-book" className='font-semibold'>📝 Add Book</NavLink></li>
+      <li><NavLink to="/my-books" className='font-semibold'>📖 My Books</NavLink></li>
     </>
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar  shadow-sm bg-[#da9dac]">
       {/* Left */}
       <div className="navbar-start">
         <div className="dropdown">
@@ -59,10 +59,10 @@ const Navbar = () => {
         {!user ? (
           
           <>
-            <NavLink to="/auth/login" className="btn btn-outline btn-sm">
+            <NavLink to="/auth/login" className="btn btn-outline btn-sm bg-indigo-300">
               Login
             </NavLink>
-            <NavLink to="/auth/register" className="btn btn-error btn-sm text-white">
+            <NavLink to="/auth/register" className="btn btn-error btn-sm text-white bg-orange-500">
               Register
             </NavLink>
           </>
@@ -78,11 +78,10 @@ const Navbar = () => {
                 />
               </div>
             ) : (
-              <span className="font-semibold">{user.displayName || "User"}</span>
-            )}
+              <span className="font-semibold">{user.displayName || "User"}</span>)}
 
-            <button onClick={handleLogout} className="btn btn-outline btn-sm">
-              Log Out
+            <button onClick={handleLogout} className="btn btn-sm bg-fuchsia-200 font-semibold shadow-xl  transform hover:-translate-x-1">
+              Log Out ➜]
             </button>
           </div>
         )}

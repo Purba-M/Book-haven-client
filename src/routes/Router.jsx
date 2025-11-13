@@ -10,6 +10,7 @@ import Authlayout from "../layouts/AuthLayout";
 import ErrorLayout from "../layouts/ErrorLayout";
 import Bookdetails from "../pages/books/Bookdetails";
 import Private from "../components/Private";
+import Update from "../pages/books/Update";
 
 const router=createBrowserRouter([
     {
@@ -38,6 +39,10 @@ const router=createBrowserRouter([
             {
                 path:'/book-details/:id',
                 element:<Private><Bookdetails></Bookdetails></Private>
+            },
+            {
+              path:'/update-book/:id',
+              element:<Private><Update></Update></Private>
             }
         ]
 

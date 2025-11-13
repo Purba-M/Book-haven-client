@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const AddBooks = () => {
   const [formData, setFormData] = useState({
@@ -26,7 +27,7 @@ const AddBooks = () => {
       });
 
       if (response.ok) {
-        alert("✅ Book added successfully!");
+        toast("Book added successfully!");
         setFormData({
           title: "",
           author: "",
@@ -37,7 +38,7 @@ const AddBooks = () => {
           userEmail: "",
         });
       } else {
-        alert("❌ Failed to add book.");
+        alert("Failed to add book.");
       }
     } catch (error) {
       console.error("Error adding book:", error);
@@ -110,18 +111,15 @@ const AddBooks = () => {
 
         <input
           type="text"
-          name="email"
+          name="userEmail"
           placeholder="email"
-          value={formData.email}
+          value={formData.userEmail}
           onChange={handleChange}
           className="w-full p-2 border rounded"
         />
-        
-
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
-        >
+          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
           Add Book
         </button>
       </form>
