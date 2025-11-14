@@ -9,7 +9,7 @@
 
 <h2>🌐 Live Links</h2>
 <ul>
-  <li><strong>Client:</strong> <a href="https://your-client-url.com">https://your-client-url.com</a></li>
+  <li><strong>Client:</strong> <a href="https://book-haven-server-new.vercel.app">https://your-client-url.com</a></li>
   <li><strong>Server:</strong> <a href="https://your-server-url.com">https://your-server-url.com</a></li>
 </ul>
 
