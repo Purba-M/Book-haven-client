@@ -10,7 +10,7 @@
 <h2>🌐 Live Links</h2>
 <ul>
   <li><strong>Client:</strong> <a href="https://book-haven-server-new.vercel.app">https://your-client-url.com</a></li>
-  <li><strong>Server:</strong> <a href="https://your-server-url.com">https://your-server-url.com</a></li>
+  <li><strong>Server:</strong> <a href="https://visionary-banoffee-1fc739.netlify.app">https://your-server-url.com</a></li>
 </ul>
 
 <br>
