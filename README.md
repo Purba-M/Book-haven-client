@@ -1,16 +1,55 @@
-# React + Vite
+<h1 align="center">📚 Book Haven</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <strong>An Online Book Management & Sharing Platform</strong><br>
+  Built with React, Express, MongoDB & Firebase Authentication
+</p>
 
-Currently, two official plugins are available:
+<br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h2>🌐 Live Links</h2>
+<ul>
+  <li><strong>Client:</strong> <a href="https://your-client-url.com">https://your-client-url.com</a></li>
+  <li><strong>Server:</strong> <a href="https://your-server-url.com">https://your-server-url.com</a></li>
+</ul>
 
-## React Compiler
+<br>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<h2>✨ Features</h2>
+<ul>
+  <li>📖 Browse and view all books with clean UI</li>
+  <li>➕ Authenticated users can add new books</li>
+  <li>📝 Logged-in users can post comments in real-time</li>
+  <li>✏️ Users can update and delete only their uploaded books</li>
+  <li>🔐 JWT-secured API with Firebase login system</li>
+  <li>📂 User dashboard to manage personal book collection</li>
+</ul>
 
-## Expanding the ESLint configuration
+<br>
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<h2>⚙️ Tech Stack</h2>
+
+<h3>Frontend</h3>
+<ul>
+  <li>React.js</li>
+  <li>React Router</li>
+  <li>Axios</li>
+  <li>Tailwind CSS</li>
+  <li>Firebase Authentication</li>
+</ul>
+
+<h3>Backend</h3>
+<ul>
+  <li>Node.js</li>
+  <li>Express.js</li>
+  <li>MongoDB Atlas</li>
+  <li>JSON Web Token (JWT)</li>
+  <li>Firebase Admin SDK</li>
+</ul>
+
+<br>
+
+<h2>🚀 Installation Guide</h2>
+
+<h3>Client Setup</h3>
+
