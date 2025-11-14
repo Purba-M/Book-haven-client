@@ -5,6 +5,21 @@ import axios from 'axios';
 const LatestBooks = () => {
   const [books, setBooks] = useState([]);
   const [loading,setLoading]=useState([])
+  const [theme, setTheme] = useState(
+      localStorage.getItem("theme") || "light");
+  
+    useEffect(()=>{
+      if (theme==="dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+      localStorage.setItem("theme",theme);
+    }, [theme]);
+  
+    const toggleTheme =()=>{
+      setTheme(theme ==="dark"?"light":"dark");
+    };
 
   useEffect(() => {
   axios.get('https://book-haven-server-new.vercel.app/latest-books')
@@ -20,7 +35,15 @@ if (loading) {
   return <Spinner />;
 }
 return (
+  
     <section className="max-w-7xl mx-auto my-10 bg-[#a3978f] rounded-xl">
+      <div className="flex justify-end mb-3">
+        <button onClick={toggleTheme}
+          className="p-2 rounded-full bg-white dark:bg-gray-700 shadow-md hover:scale-110 transition"
+          aria-label="Toggle theme">
+          {theme==="dark"?"🌞":"🌙"}
+        </button>
+      </div>
       <h2 className="text-3xl font-bold text-center text-[#6B4226] mb-6">
        Our Latest Arrivals
       </h2>

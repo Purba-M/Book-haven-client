@@ -42,7 +42,7 @@ const AddBooks = () => {
       toast.error("Failed to add book.");
     }
   } catch (error) {
-    console.error("Error adding book:", error.response?.data || error.message);
+    console.error("Error adding book:", error.response?.data||error.message);
     toast.error("Server error. Check your backend logs.");
   }
 };
