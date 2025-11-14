@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import Spinner from "../../components/Spinner";
 
 const Allbooks = () => {
   const [books, setBooks] = useState([]);
@@ -20,22 +19,16 @@ const Allbooks = () => {
       .catch(() => setLoading(false));
   }, []);
 
-  // 🔽 SORT FUNCTION
-  const handleSort = (type) => {
-    let sortedBooks = [...books];
-
-    if (type === "high") {
-      sortedBooks.sort((a, b) => (b.rating || 0) - (a.rating || 0));
-    }
-
-    if (type === "low") {
-      sortedBooks.sort((a, b) => (a.rating || 0) - (b.rating || 0));
-    }
-
+  const handleSort=(type)=>{
+    const sortedBooks=[...books];
+    if (type==="high"){
+      sortedBooks.sort((a,b)=>(b.rating||0)-(a.rating||0));}
+    if (type==="low") {
+      sortedBooks.sort((a,b)=>(a.rating||0)-(b.rating||0));}
     setBooks(sortedBooks);
   };
 
-  // Loading Spinner UI
+ 
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
@@ -52,15 +45,11 @@ const Allbooks = () => {
     <div className="p-8 bg-gray-400 rounded-3xl">
       <h2 className="font-bold text-center text-3xl">All Books</h2>
 
-      {/* 🔽 SORT DROPDOWN */}
       <div className="flex justify-end mb-4">
-        <select
-          onChange={(e) => handleSort(e.target.value)}
-          className="select select-bordered max-w-xs"
-        >
+        <select onChange={(e)=>handleSort(e.target.value)} className="select select-bordered max-w-xs">
           <option value="">Sort by Rating</option>
-          <option value="high">High → Low</option>
-          <option value="low">Low → High</option>
+          <option value="high">High→Low</option>
+          <option value="low">Low→High</option>
         </select>
       </div>
 
@@ -77,18 +66,17 @@ const Allbooks = () => {
             </tr>
           </thead>
           <tbody>
-            {books.map((book, index) => (
+            {books.map((book,index)=>(
               <tr key={book._id} className="hover:bg-gray-50">
-                <td className="py-2 px-4 border-b">{index + 1}</td>
+                <td className="py-2 px-4 border-b">{index+1}</td>
                 <td className="py-2 px-4 border-b font-bold">{book.title}</td>
                 <td className="py-2 px-4 border-b font-semibold text-gray-500">{book.author}</td>
                 <td className="py-2 px-4 border-b font-semibold text-gray-400">{book.genre}</td>
                 <td className="py-2 px-4 border-b">{book.rating || "N/A"}</td>
                 <td className="py-2 px-4 border-b">
                   <button
-                    onClick={() => navigate(`/book-details/${book._id}`)}
-                    className="hover:bg-emerald-200 bg-blue-400 text-white px-3 py-1 rounded cursor-pointer"
-                  >
+                    onClick={()=>navigate(`/book-details/${book._id}`)}
+                    className="hover:bg-emerald-200 bg-blue-400 text-white px-3 py-1 rounded cursor-pointer">
                     View Details
                   </button>
                 </td>

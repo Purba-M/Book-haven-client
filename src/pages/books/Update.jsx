@@ -41,8 +41,7 @@ const Update = () => {
       </div>
     );
   }
-
-  // Handle field change
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setBook({ ...book, [name]: value });
