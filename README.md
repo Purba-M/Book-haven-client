@@ -52,4 +52,31 @@
 <h2>🚀 Installation Guide</h2>
 
 <h3>Client Setup</h3>
+<ul>
+  <li>cd client</li>
+  <li>npm install</li>
+  <li>npm run dev</li>
+</ul>
+
+
+<h3>Server Setup</h3>
+<ul>
+  <li>cd server</li>
+  <li>npm install</li>
+  <li>npm start</li>
+</ul>
+
+
+<br>
+
+<h2>🔑 Environment Variables</h2>
+
+<h3>Client (.env)</h3>
+
+
+<br>
+
+<h2>Developer</h2>
+<p><strong>Moni</strong><br>Book Haven Project — 2025</p>
+
 
