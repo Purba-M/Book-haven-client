@@ -34,7 +34,7 @@ const router=createBrowserRouter([
             },
             {
                 path:'/my-books',
-                element:<Mybooks></Mybooks>
+                element:<Private><Mybooks></Mybooks></Private>
             },
             {
                 path:'/book-details/:id',
